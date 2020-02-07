@@ -42,7 +42,7 @@ public class BurgerServiceController {
     @GetMapping("/get")
     public ResponseEntity<String> getBurger(@RequestParam(value = "id") long id) {
         Burger burger = burgerService.get(id);
-        return Objects.isNull(burger) ? ResponseEntity.ok("Not found") : ResponseEntity.ok(burger.toString());
+        return Objects.isNull(burger) ? ResponseEntity.ok("Burger is not found") : ResponseEntity.ok(burger.toString());
     }
 
     @ApiOperation(value = "Delete burger operation")
